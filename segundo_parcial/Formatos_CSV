@@ -1,0 +1,22 @@
+<!--Formato CSV-->
+nombre, apellido, telefono
+Fulano, DTal, 00000000
+Mengano, DTal, 00000001
+Sutano, Miguel, 0000002
+
+XML
+<persona>
+    <nombre></nombre>
+    <apellido></apellido>
+    <telefono></telefono>
+</persona>
+
+JSON
+{
+    personas: [
+        {
+            nombre:"Fulano"
+            apellido:"DTal"
+        }
+    ]
+}
