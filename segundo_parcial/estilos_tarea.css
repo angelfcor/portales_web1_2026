@@ -1,0 +1,166 @@
+/* ============================================
+   estilos_tarea.css
+   Hoja de estilos de la tarea.
+   Propiedades usadas: margin, padding, border,
+   width, height, display, flex, color, background
+   ============================================ */
+
+/* Reset básico: quita márgenes y rellenos por defecto del navegador */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+}
+
+/* ============================================
+   1) ENCABEZADO
+   Usamos display:flex para poner el logo
+   y el menú en la misma fila (horizontal)
+   ============================================ */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    padding: 10px 20px;
+}
+
+/* El logo ya tiene su tamaño definido en el HTML
+   pero también lo reforzamos aquí */
+header img {
+    width: 48px;
+    height: 48px;
+    margin-right: 20px;
+}
+
+/* Menú de navegación: lista sin puntitos */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #eee;
+    text-decoration: none;
+    padding: 5px;
+}
+
+/* ============================================
+   2) HERO PANEL
+   height: 90vh = 90% de la pantalla visible
+   position: relative para poder colocar el
+   texto encima de la imagen (position: absolute)
+   ============================================ */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* El texto del hero se coloca encima de la imagen */
+.hero-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero-texto a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* ============================================
+   3) SECCIÓN DE PRECIOS Y TARJETAS
+   ============================================ */
+#precios {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#precios h2 {
+    margin-bottom: 30px;
+}
+
+/* Contenedor de tarjetas: flex para que
+   queden las 3 una al lado de la otra */
+.panel-tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Cada tarjeta es un bloque con borde y relleno
+   Aquí aplicamos el Modelo de Caja:
+   - content: la imagen, el texto
+   - padding: espacio interno
+   - border: el bordeado visible
+   - margin: separación entre tarjetas (usamos gap en el padre) */
+.tarjeta {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Imagen de 300x220 según el requisito.
+   Usamos width: 100% en lugar de 300px fijo
+   para que respete el padding de la tarjeta */
+.tarjeta img {
+    width: 100%;
+    height: 220px;
+}
+
+.tarjeta h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.precio {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Lista de características */
+.tarjeta ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tarjeta ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* ============================================
+   4) PIE DE PÁGINA
+   ============================================ */
+footer {
+    background-color: #222;
+    color: #eee;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}

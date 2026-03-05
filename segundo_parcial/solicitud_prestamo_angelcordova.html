@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Tarea de Formularios</title>
+        <!--17 de febrero 2026-->
+    </head>
+    <body>
+        <h1>Solicitud de Préstamos Estudiantiles</h1>
+        <form action="tareaformularios.html" method="get">
+            
+            <label for="nombre">Nombre completo: </label><br/>
+            <input type="text" id="nombre" name="nombre"/><br/>
+            
+            <label for="correo">Dirección de Correo electronico:</label><br/>
+            <input type="email" name="correo" id="correo"/><br/>
+            
+            <label for="numero">Numero Telefonico: </label><br/>
+            <input type="text" name="numero" id="numero"/><br/>
+            
+            <label for="direccion">Dirección Actual: </label><br/>
+            <input type="text" name="direccion" id="direccion"/><br/>
+            
+            <label for="ciudad">Ciudad: </label><br/>
+            <input type="ciudad" name="ciudad" id="ciudad"/><br/>
+            
+            <label for="estado">Estado: </label><br/>
+            <select id="estado" name="estado">
+                <option value="">Seleccione su Estado</option>
+                <option value="Alabama">Alabama</option>
+                <option value="Florida">Florida</option>
+                <option value="Colorado">Colorado</option>
+                <option value="California">California</option>
+                <option value="Arkansas">Arkansas</option>
+            </select><br/>
+
+            <label for="codigoPostal">Código Postal: </label><br/>
+            <input type="text" name="codigoPostal" id="codigoPostal"/><br/><br/>
+            
+            <label>Nivel de educación actual:</label><br>
+            <input type="radio" id="preparatoria" name="nivelEducacion" value="preparatoria">
+            <label for="preparatoria">Preparatoria</label><br>
+            <input type="radio" id="licenciatura" name="nivelEducacion" value="licenciatura">
+            <label for="licenciatura">Licenciatura</label><br>
+            <input type="radio" id="maestria" name="nivelEducacion" value="maestria">
+            <label for="maestria">Maestría</label><br>
+            <input type="radio" id="doctorado" name="nivelEducacion" value="doctorado">
+            <label for="doctorado">Doctorado</label><br><br>
+
+            <label>Programa de estudio:</label><br>
+            <input type="radio" id="computacion" name="programa" value="computacion">
+            <label for="computacion">Ciencias de la Computación</label><br>
+            <input type="radio" id="ingenieria" name="programa" value="ingenieria">
+            <label for="ingenieria">Ingeniería</label><br>
+            <input type="radio" id="economia" name="programa" value="economia">
+            <label for="economia">Economía</label><br>
+            <input type="radio" id="artes" name="programa" value="artes">
+            <label for="artes">Artes</label><br>
+            <input type="radio" id="otro" name="programa" value="otro">
+            <label for="otro">Otro</label><br><br>
+
+            <label for="monto">Monto del Prestamo Solicitado: </label><br/>
+            <input type="text" name="monto" id="monto"/><br/>
+
+            <label for="razon">Razón para solicitar el préstamo</label><br/>
+            <textarea id="razon" name="razon" rows="5" cols="40"></textarea><br/><br/>
+
+            <button type="submit">Enviar Solicitud</button>
+        </form>
+    </body>
+</html>
