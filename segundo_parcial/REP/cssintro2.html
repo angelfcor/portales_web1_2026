@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>¿Qué es CSS?</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="intro2.css" />
+        <script>
+            document.addEventListener("DOMContentLoaded", ()=>{
+                const hb = document.querySelector(".hamburguer-buttons");
+                const nv = document.querySelector("header nav");
+                hb.addEventListener("click", (e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    nv.classList.toggle("hidden");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <div>
+                <div class="hamburguer-buttons">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <h1>Soccer</h1>
+            </div>
+            <nav class="hidden">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="contactus">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="hero">
+                <div>
+                    <picture>
+                        <source srcset="https://picsum.photos/id/80/1300/720" media="(min-width:1025px)" />
+                        <source srcset="https://picsum.photos/id/80/1025/640" media="(min-width:720px)" />
+                        <img src="https://picsum.photos/id/80/480/480" alt="Hero Panel Image" />
+                    </picture>
+                </div>
+                <div class="action-panel q2">
+                    <h2>Agenda una cita para la demo!!!</h2>
+                    <a href>Agendar</a>
+                </div>
+            </section>
+            <section class="grid container">
+                <div class="row">
+                    <div class="col-6 col-m-4 col-l-3">
+                        <div class="cajas">
+                            Col de 4
+                        </div>
+                    </div>
+                    <div class="col-6 col-m-3" data-orderid="12345678">Col de 3</div>
+                    <div class="col-6 col-m-5 col-l-6">Col de 5</div>
+                    <div class="col-6 col-m-12">Col de 6</div>
+                </div>
+
+            </section>
+
+            <section class="grid container">
+                <div class="row">
+                <div class="col-12 col-m-6">
+                    <picture>
+                    <source srcset="https://picsum.photos/id/30/640/640"  media="(min-width:720px)">
+                    <img srcset="https://picsum.photos/id/30/320/320" alt="half panel" class="fit-image"/>
+                    </picture>
+                </div>
+                <div class="col-12 col-m-6">
+                    <form class="form">
+                    <h2>Formulario</h2>
+                    <fieldset>
+                        <label>Nombre Completo</label>
+                        <input />
+                    </fieldset>
+                    <fieldset>
+                        <label>Correo</label>
+                        <input />
+                    </fieldset>
+                    </form>
+                </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <section>
+                2026 All Rights Reserved &copy;
+            </section>
+        </footer>
+    </body>
+</html>

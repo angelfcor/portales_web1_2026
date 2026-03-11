@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Landing Page</title>
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" id="check">
+        <label class="hamburger" for="check">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+        <section class="branding">
+            <img src="https://picsum.photos/id/1062/64/64" alt="logo">
+            <h1>Bakery</h1>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <picture>
+                <source srcset="https://picsum.photos/id/1080/1200/720" media="(min-width: 1024px)">
+                <source srcset="https://picsum.photos/id/1080/1024/640" media="(min-width: 720px)">
+                <img src="https://picsum.photos/id/1080/380/380" alt="bakery">
+            </picture>
+            <h2>Delicious Bakery</h2>
+            <a href="#">Order Now</a>
+        </section>
+        <section class="about">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est necessitatibus dignissimos cum porro animi
+                maiores laboriosam voluptatibus iste. Perspiciatis officia libero fuga, aut ex facilis ad voluptates
+                esse a! Accusamus!</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est necessitatibus dignissimos cum porro animi
+                maiores laboriosam voluptatibus iste. Perspiciatis officia libero fuga, aut ex facilis ad voluptates
+                esse a! Accusamus!</p>
+            <a href="#">Learn More</a>
+            <section class="workers">
+                <div class="worker">
+                    <h3>Chief Baker</h3>
+                    <img src="https://picsum.photos/id/646/320/320" alt="bakery">
+                </div>
+                <div class="worker">
+                    <h3>Queen Baker</h3>
+                    <img src="https://picsum.photos/id/821/320/320" alt="bakery">
+                </div>
+                <div class="worker">
+                    <h3>Prince Baker</h3>
+                    <img src="https://picsum.photos/id/996/320/320" alt="bakery">
+                </div>
+            </section>
+        </section>
+        <section class="quotes">
+            <div class="left">
+                <h2>Ask for a Quote</h2>
+                <form class="contact" action="" method="get">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <label for="product">Bakery Selection</label>
+                    <select name="product" id="product">
+                        <option value="bakery1">Bakery 1</option>
+                        <option value="bakery2">Bakery 2</option>
+                        <option value="bakery3">Bakery 3</option>
+                        <option value="bakery4">Bakery 4</option>
+                        <option value="bakery5">Bakery 5</option>
+                    </select>
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" placeholder="Message" required></textarea>
+                    <input type="submit" value="Send" />
+                </form>
+            </div>
+            <div class="right">
+                <picture>
+                    <source srcset="https://picsum.photos/id/635/640/640" media="(min-width: 1024px)">
+                    <img src="https://picsum.photos/id/635/480/480" alt="bakery">
+                </picture>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Bakery</p>
+        <section class="phones">
+            <a href="tel:+1234567890">+1 234 567 890</a>
+            <a href="tel:+1234567890">+1 234 567 890</a>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
