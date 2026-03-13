@@ -4,13 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
     <title>Bakery Landing Page</title>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const hb = document.querySelector("#hamburger");
+        const nv = document.querySelector("header nav");
+        hb.addEventListener("click", () => {
+            nv.classList.toggle("hidden");
+        });
+    });
+    </script>
 </head>
 
 <body>
     <header>
-        <input type="checkbox" id="check">
-        <label class="hamburger" for="check">
+        <label class="hamburger" id="hamburger">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
@@ -19,7 +28,7 @@
             <img src="https://picsum.photos/id/1062/64/64" alt="logo">
             <h1>Bakery</h1>
         </section>
-        <nav>
+        <nav class="hidden">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Products</a></li>
@@ -106,6 +115,7 @@
             </ul>
         </nav>
     </footer>
+    
 </body>
 
 </html>

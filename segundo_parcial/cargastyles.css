@@ -1,0 +1,113 @@
+:root {
+    --atom-size: 200px;
+    --nucleus-size: 30px;
+    --electron-size: 10px;
+    --orbit-color: rgba(0, 255, 255, 0.3);
+    --nucleus-color: #ff0055;
+    --electron-color: #00f2ff;
+    --bg-color: #0a0a0a;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loader-container {
+    perspective: 1000px;
+}
+
+.atom {
+    position: relative;
+    width: var(--atom-size);
+    height: var(--atom-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.nucleus {
+    width: var(--nucleus-size);
+    height: var(--nucleus-size);
+    background-color: var(--nucleus-color);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--nucleus-color), 0 0 40px var(--nucleus-color);
+    z-index: 10;
+}
+
+.orbit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--orbit-color);
+    border-radius: 50%;
+    transform-style: preserve-3d;
+}
+
+.electron {
+    position: absolute;
+    width: var(--electron-size);
+    height: var(--electron-size);
+    background-color: var(--electron-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--electron-color), 0 0 20px var(--electron-color);
+    top: 50%;
+    left: 0;
+    margin-top: calc(var(--electron-size) / -2);
+    margin-left: calc(var(--electron-size) / -2);
+}
+
+/* Specific Orbit Rotations and Animations */
+
+.orbit1 {
+    transform: rotateX(75deg) rotateY(0deg);
+    animation: rotate1 2s linear infinite;
+}
+
+.orbit2 {
+    transform: rotateX(75deg) rotateY(60deg);
+    animation: rotate2 2.5s linear infinite;
+}
+
+.orbit3 {
+    transform: rotateX(75deg) rotateY(-60deg);
+    animation: rotate3 3s linear infinite;
+}
+
+@keyframes rotate1 {
+    from {
+        transform: rotateX(75deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateX(75deg) rotateY(0deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate2 {
+    from {
+        transform: rotateX(75deg) rotateY(60deg) rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateX(75deg) rotateY(60deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate3 {
+    from {
+        transform: rotateX(75deg) rotateY(-60deg) rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateX(75deg) rotateY(-60deg) rotateZ(360deg);
+    }
+}

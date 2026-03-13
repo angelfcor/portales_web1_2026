@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Introducción a JavaScript</title>
+        <!--comentario-->
+    </head>
+    <body>
+        <h1>Intro a JavaScript</h1>
+        <button name="btn_inline" onclick="alert('Click InLine')">
+            Click en JavaScript InLine
+        </button>
+
+        <!--QUE ES EL DOM: 
+        es como se conoce a la estructura de un documento HTML-->
+
+        <!--js ES UN ENTORNO EN EL QUE SE TIENE ACCESO A EL DOM-->
+        <!--Hablando de NET c#: Que es un delegado-->
+        <!--document es para acceder al dom-->
+        <!--JS es asincrono por naturaleza-->
+
+        <!--El dom debe estar cargado en memoria-->
+
+        <hr>
+        <button id="btn_script_block">Click en Boton desde script block</button>
+        <script>
+            //Javascript es asincrono
+            document.addEventListener("DOMContentLoaded",page_load);
+            
+            function page_load(){
+                // Hacer referencia al nodo y registrar los eventos a reaccionar
+                //let es como el var en visual studio
+                let btn = document.getElementById('btn_script_block');
+
+                btn.addEventListener("click",(e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    alert("Click from block");
+                })
+            }
+
+            function page_load2(){
+                console.log("Loaded 2 ejecutado");
+            }
+        </script>
+    </body>
+</html>
