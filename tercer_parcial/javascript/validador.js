@@ -22,10 +22,30 @@ document.addEventListener("DOMContentLoaded", ()=> {
     submitButton.addEventListener("click", (e)=>{
         e.preventDefault();
         e.stopPropagation();
-        if(validarEspaciovacio(nombreCompletoInput.value)){
-            formulario.submitButton
-        } else{
-            alert("Hay validaciones que fallan.");
+        let objErrores = {};
+        let formularioValido = true;
+
+        if(!validarEspaciovacio(nombreCompletoInput.value)){
+            objErrores['nombreCompleto'] = {
+                "error": "Nombre completo no puede estar vacio.",
+                "input": nombreCompletoInput
+            }
+            formularioValido = false;
+        }
+        if(!validarCorreoElectronico(validarCorreoElectronico.value)){
+            objErrores['correoElectronico'] = {
+                "error": "Correo electronico no puede estar vacio.",
+                "input": correoElectronico
+            }
+            formularioValido = false;
+        }
+
+        if(formularioValido) {
+            formulario.submitButton();
+        } else {
+            Object.entries(objErrores).forEach(err => {
+                let[key, obj] = err;
+            })
         }
     });    
 });
