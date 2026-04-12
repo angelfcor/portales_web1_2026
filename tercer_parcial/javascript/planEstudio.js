@@ -85,6 +85,8 @@ class FlujoGrama {
         this.plan = plan;
         this.root = document.getElementById(this.rootId);
         this.root.classList.add("plan");
+        this.pseudoDOM = {};
+        this.selected = 1;
     }
     GenerateUX(){
         this.createHeader();
@@ -121,7 +123,44 @@ class FlujoGrama {
         blqDef.asignaturas.forEach((asg)=>{
             let asignaturaDOM = document.createElement("DIV");
             asignaturaDOM.classList.add("plan_asignatura");
-            
-        })
+            let codigoDOM = document.createElement("DIV");
+            codigoDOM.innerText = asg.codigo;
+            let descripcionDOM = document.createElement("DIV");
+            descripcionDOM.innerText = `${asg.nombre} (${asg.creditos})`;
+            asignaturaDOM.appendChild(codigoDOM);
+            asignaturaDOM.appendChild(descripcionDOM);
+            bloqueDOM.appendChild(asignaturaDOM);
+
+            //Agregar
+            this.pseudoDOM[asg.codigo] = {};
+            this.pseudoDOM[asg.codigo] ["nodo"] = asignaturaDOM;
+            this.pseudoDOM[asg.codigo] ["requisitos"] = [];
+            this.pseudoDOM[asg.codigo] ["apertura"] = [];
+            asg.requisitos.forEach(rq => {
+                this.pseudoDOM[asg.codigo]["requisitos"].push(
+                    this.pseudoDOM[rq].nodo
+                );
+                this.pseudoDOM[rq].apertura.push(
+                    this.pseudoDOM[asg.codigo].nodo
+                );
+            });
+            this.pseudoDOM[asg.codigo]["nodo"].addEventListener(
+                "click",
+                (e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if(this.selected){
+                        this.selected.nodo.classList.remove("plan_selected");
+                        this.selected.requisitos.forEach(
+                            n=>n.classList.remove("plan_requisito")
+                        );
+                        this.selected.apertura.forEach(
+                            n=>n.classList.remove("plan_apertura")
+                        );
+                    }
+                    this.selected = this.pseudoDOM[asg.cosi]
+                }
+            )
+        });
     }
 }

@@ -157,5 +157,6 @@ footer {
     min-height: 6opx;
     display: flex;
     flex-direction: column;
-    
+    justify-content: start;
+    align-items: center;
 }
